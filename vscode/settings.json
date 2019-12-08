@@ -1,0 +1,9 @@
+{
+  "cloudcode.profile-cluster-map": {
+    "cloudbuild": "${GKE_CLUSTER}",
+    "[default]": "${GKE_CLUSTER}"
+  },
+  "cloudcode.profile-registry-map": {
+    "[default]": "gcr.io/${GCR_PROJECT}"
+  }
+}

@@ -1,0 +1,20 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - context: src/api
+      image: gcr.io/cloud-developer-basics/node-gke-microservice-api
+    - context: src/fruitService
+      image: gcr.io/cloud-developer-basics/node-gke-microservice-fruit
+    - context: src/greeterService
+      image: gcr.io/cloud-developer-basics/node-gke-microservice-greeter
+deploy:
+  kubectl:
+    manifests:
+      - kubernetes-manifests/**
+profiles:
+  - name: cloudbuild
+    build:
+      googleCloudBuild: {}

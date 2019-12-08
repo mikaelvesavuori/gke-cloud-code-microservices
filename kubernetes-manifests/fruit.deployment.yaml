@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fruit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fruit
+  template:
+    metadata:
+      labels:
+        app: fruit
+    spec:
+      containers:
+        - name: fruit
+          image: gcr.io/cloud-developer-basics/node-gke-microservice-fruit
+          ports:
+            - containerPort: 2000
+          env:
+            - name: PORT
+              value: "2000"

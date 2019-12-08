@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeter
+  template:
+    metadata:
+      labels:
+        app: greeter
+    spec:
+      containers:
+        - name: greeter
+          image: gcr.io/cloud-developer-basics/node-gke-microservice-greeter
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"

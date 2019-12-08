@@ -1,0 +1,16 @@
+{
+  "name": "demo-k8s-greeter-service",
+  "version": "1.0.0",
+  "description": "Simple Node.js server running Fastify",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules index.mjs"
+  },
+  "keywords": [],
+  "author": "Mikael Vesavuori",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.10.0"
+  }
+}
